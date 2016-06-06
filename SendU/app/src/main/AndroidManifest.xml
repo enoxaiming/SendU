@@ -18,7 +18,7 @@
         <activity
             android:name=".Activity.SplashActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
-
+        <activity android:name=".Activity.CommingSoon"></activity>
     </application>
 
 </manifest>
