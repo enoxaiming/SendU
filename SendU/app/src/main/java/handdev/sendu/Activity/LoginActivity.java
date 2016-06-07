@@ -3,6 +3,7 @@ package handdev.sendu.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import handdev.sendu.R;
 public class LoginActivity extends AppCompatActivity {
 
     FragmentManager fragmentManager = null;
+    public static Context LoginActivityContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

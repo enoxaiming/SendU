@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "660308136061",
+    "project_id": "default-demo-app-cda20"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:660308136061:android:c6e699e8d4c43c8f",
+        "android_client_info": {
+          "package_name": "handdev.sendu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "660308136061-8nbuq5r5p4he76ragska7bob12r4ser9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "handdev.sendu",
+            "certificate_hash": "69943D1445FEBD6D45D6F9B127939FAD9D7743DF"
+          }
+        },
+        {
+          "client_id": "660308136061-n2aptv1nrdj77r71ua6dql4uqoajc5pd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ5aiAEeWSxs0aKEJWuMAYDe7zwi_Y0Zk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
