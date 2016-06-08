@@ -7,10 +7,8 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +23,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Scope;
@@ -33,18 +30,16 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
 
-import org.w3c.dom.Text;
-
 import handdev.sendu.R;
 
 public class GoogleActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener {
+        GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
 
     private static final int REQUEST_CODE_RESOLVE = 1;
     private static final int REQUEST_CODE_EMAIL = 2;
     private static final int REQUEST_CODE_TOKEN = 3;
-    private static final String TAG = "SignInActivity";
+    private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
 
     private GoogleApiClient mGoogleApiClient;
@@ -56,7 +51,7 @@ public class GoogleActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_google);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button login = (Button)findViewById(R.id.login);
+        Button login = (Button) findViewById(R.id.login);
         if (login != null) {
             login.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,8 +61,8 @@ public class GoogleActivity extends AppCompatActivity implements
             });
         }
 
-        Button logout = (Button)findViewById(R.id.logout);
-        if(logout != null) {
+        Button logout = (Button) findViewById(R.id.logout);
+        if (logout != null) {
             logout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -83,15 +78,7 @@ public class GoogleActivity extends AppCompatActivity implements
                 .enableAutoManage(this /* FragmentActivity */, this /* OnConnectionFailedListener */)
                 .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
                 .build();
-        SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        if(signInButton != null) {
-            signInButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    signIn();
-                }
-            });
-        }
+
 
 
 
@@ -322,5 +309,14 @@ public class GoogleActivity extends AppCompatActivity implements
         Log.d("GoogleActivity", "useToken: token = " + token);
         mBusy = false;
         ((TextView) findViewById(R.id.token)).setText("Token: " + token);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.sign_in_button:
+                signIn();
+                break;
+        }
     }
 }
