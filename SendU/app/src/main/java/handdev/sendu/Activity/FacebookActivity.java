@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -22,18 +24,8 @@ import handdev.sendu.R;
 public class FacebookActivity extends AppCompatActivity {
 
     private CallbackManager mCallbackManager;
-    /*private static FacebookActivity mInstance = null;
-    private static Activity mActivity;
-    public static FacebookActivity getInstance(Activity activity){
-        if (mInstance==null)
-            synchronized (FacebookActivity.class) {
-                if (mInstance==null)
-                    mInstance=new FacebookActivity(activity);
-            }
-        if (activity!=null&&!mInstance.mActivity.equals(activity))
-            mInstance.mActivity=activity;
-        return mInstance;
-    }*/
+    private AccessTokenTracker accessTokenTracker;
+    private AccessToken accessToken;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +61,19 @@ public class FacebookActivity extends AppCompatActivity {
 
         mCallbackManager = CallbackManager.Factory.create();
         LoginButton facebookButton = (LoginButton) findViewById(R.id.login_button);
+
+
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(
+                    AccessToken oldAccessToken,
+                    AccessToken currentAccessToken) {
+                // Set the access token using
+                // currentAccessToken when it's loaded or set.
+            }
+        };
+        // If the access token is available already assign it.
+        accessToken = AccessToken.getCurrentAccessToken();
         facebookButton.setReadPermissions("public_profile");
         facebookButton.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -83,7 +88,7 @@ public class FacebookActivity extends AppCompatActivity {
 
             @Override
             public void onError(FacebookException error) {
-                ((TextView) findViewById(R.id.status)).setText("Status: error");
+                startActivity(new Intent(FacebookActivity.this,CommingSoon.class));
             }
         });
     }
@@ -110,5 +115,10 @@ public class FacebookActivity extends AppCompatActivity {
 
     public void logout() {
         ((TextView) findViewById(R.id.status)).setText("Status: logged out");
+    }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        accessTokenTracker.stopTracking();
     }
 }

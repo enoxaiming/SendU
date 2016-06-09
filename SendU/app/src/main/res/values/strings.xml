@@ -5,5 +5,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook_app_id">1824683694426694</string>
     <string name="signed_in_fmt">Signed in as: %s</string>
-    <string name="google_serverclient_Id">660308136061-8nbuq5r5p4he76ragska7bob12r4ser9.apps.googleusercontent.com</string>
+    <string name="google_serverclient_Id">660308136061-n2aptv1nrdj77r71ua6dql4uqoajc5pd.apps.googleusercontent.com</string>
+    <string name="loading">Loading…</string>
 </resources>
