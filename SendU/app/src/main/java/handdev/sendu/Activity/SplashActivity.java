@@ -1,4 +1,4 @@
-package handdev.sendu.Activity;
+package handdev.sendu.activity;
 
 
 import android.os.Handler;

@@ -1,16 +1,15 @@
-package Async;
+package async;
 
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import Data.UserInfo;
-import HTTP.HttpUtil;
-import handdev.sendu.Activity.MainActivity;
+import data.UserInfo;
+import http.HttpUtil;
+import handdev.sendu.activity.MainActivity;
 
 /**
  * Created by JunHyeok on 2016. 6. 10..

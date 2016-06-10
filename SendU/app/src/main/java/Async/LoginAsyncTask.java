@@ -1,4 +1,4 @@
-package Async;
+package async;
 
 /**
  * Created by JunHyeok on 2016. 6. 10..
@@ -10,9 +10,9 @@ import java.io.IOException;
 import org.json.*;
 
 
-import Data.UserInfo;
-import HTTP.HttpUtil;
-import handdev.sendu.Activity.MainActivity;
+import data.UserInfo;
+import http.HttpUtil;
+import handdev.sendu.activity.MainActivity;
 
 public class LoginAsyncTask extends AsyncTask<UserInfo, Void, Void> {
 

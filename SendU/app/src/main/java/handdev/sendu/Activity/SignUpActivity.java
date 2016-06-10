@@ -1,4 +1,4 @@
-package handdev.sendu.Activity;
+package handdev.sendu.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import Async.SignUpAsyncTask;
-import Data.UserInfo;
+import async.SignUpAsyncTask;
+import data.UserInfo;
 import handdev.sendu.R;
 
 public class SignUpActivity extends AppCompatActivity {

@@ -1,11 +1,11 @@
-package handdev.sendu.Activity;
+package handdev.sendu.activity;
 
 import android.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
 
-import Data.UserInfo;
+import data.UserInfo;
 import handdev.sendu.R;
 
 public class SignInActivity extends AppCompatActivity {

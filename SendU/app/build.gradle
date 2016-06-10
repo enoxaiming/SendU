@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "handdev.sendu"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -29,6 +29,8 @@ dependencies {
     compile 'com.google.android.gms:play-services-plus:9.0.2'
     compile 'com.android.support:support-annotations:23.0.0'
     compile 'com.google.android.gms:play-services-auth:9.0.2'
+
+    compile 'com.ramotion.paperonboarding:paper-onboarding:1.0.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

@@ -1,4 +1,4 @@
-package handdev.sendu.Activity;
+package handdev.sendu.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -32,6 +32,7 @@ public class MainActivity extends FragmentActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startActivity(new Intent(this,SplashActivity.class));
         if (savedInstanceState == null) {
             getFragmentManager()
                     .beginTransaction()

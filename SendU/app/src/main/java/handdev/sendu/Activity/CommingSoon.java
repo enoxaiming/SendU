@@ -1,4 +1,4 @@
-package handdev.sendu.Activity;
+package handdev.sendu.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

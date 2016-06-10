@@ -1,4 +1,4 @@
-package Data;
+package data;
 
 /**
  * Created by JunHyeok on 2016. 6. 10..
