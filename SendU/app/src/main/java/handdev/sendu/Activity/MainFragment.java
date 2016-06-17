@@ -1,7 +1,9 @@
 package handdev.sendu.activity;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.ProgressDialog;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,14 +18,15 @@ import handdev.sendu.R;
 public class MainFragment extends Fragment {
         //implements View.OnClickListener {
 
-    private CallbackManager mCallbackManager;
-    private static final String TAG = "GoogleActivity";
-    private static final int RC_SIGN_IN = 9001;
-
-    private GoogleApiClient mGoogleApiClient;
-    private ProgressDialog mProgressDialog;
 
 
+
+    private static Activity activity = null;
+
+
+    public MainFragment() {
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -62,9 +65,7 @@ public class MainFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
+
 
 
 
@@ -89,7 +90,7 @@ public class MainFragment extends Fragment {
         }*/
 
 
-    }
+
     /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -147,4 +148,18 @@ public class MainFragment extends Fragment {
                 break;
         }
     }*/
+    public static MainFragment newInstance(Activity activity) {
+        MainFragment fragment = new MainFragment();
+        Bundle args = new Bundle();
+        fragment.setArguments(args);
+
+        MainFragment.activity = activity;
+
+        return fragment;
+    }
+
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+    }
 }
